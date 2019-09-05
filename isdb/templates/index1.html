@@ -1,0 +1,18 @@
+{% extends 'base1.html' %}
+{% block content %}
+
+
+
+ <h1 class="mb-5">Список альбомів:</h1>
+
+
+
+{% for album in all_albums %}
+    <p>
+    <a href="{% url 'music' pk=album.pk %}">{{ album.name }}</a>
+    </p>
+
+
+{% endfor %}
+
+{% endblock %}

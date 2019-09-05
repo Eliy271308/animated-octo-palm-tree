@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+ <h1 class="mb-5">Список фільмів:</h1>
+    {% for movie in all_movie%}
+    <p>
+    <a href="{% url 'movie' pk=movie.pk %}">{{ movie.name }}</a>
+    </p>
+        {% endfor %}
+
+{% endblock %}

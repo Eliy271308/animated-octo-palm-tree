@@ -1,0 +1,26 @@
+{% extends 'base1.html' %}
+
+
+
+  {% block content %}
+{%for person in all_person%}
+
+<div class="card mb-4" style="width: 18rem;">
+  <div class="card-body">
+      <h5 class="card-title">  <a href="{% url 'list' pk=person.pk %}">{{ person.name }}  {{ person.last_name }}</a> </h5>
+      <p class="card-text"><p>Years: {{person.Years}}</p> <p>Sex:{{person.sex}}</p></p>
+
+  </div>
+
+</div>
+
+
+
+
+
+{% endfor%}
+
+
+
+{% endblock %}
+

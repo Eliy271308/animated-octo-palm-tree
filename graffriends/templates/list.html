@@ -1,0 +1,62 @@
+{% extends 'base1.html' %}
+
+
+{% block content %}
+
+<p>
+<div style="width: 2000px; height: 45px; display: table-cell;  text-align: center">
+<h2>  {{ person.name }} {{ person.last_name }} </h2>
+</div>
+</p>
+
+
+
+<div style="width: 2000px; height: 45px; display: table-cell;  text-align: center">
+<div class="card text-white bg-dark mb-5" style="max-width: 18rem;">
+  <div class="card-header">Friends</div>
+  <div class="card-body">
+
+{%for f in person.friends.all%}
+<p><a href="{% url 'list' pk=f.pk %}">{{ f.name }} {{f.last_name}}</a></p>
+
+
+{% endfor %}
+
+
+  </div>
+</div>
+</div>
+
+<div style="width: 2000px; height: 45px; display: table-cell;  text-align: center">
+<div class="card text-white bg-dark mb-5" style="max-width: 18rem;">
+  <div class="card-header">Movie</div>
+  <div class="card-body">
+
+{%for m in person.favorite_films.all%}
+<p><a href="{%url 'movie' pk=m.pk %}">{{ m.name }} </a></p>
+
+
+{% endfor %}
+
+
+  </div>
+</div>
+</div>
+<div style="width: 2000px; height: 45px; display: table-cell;  text-align: center">
+<div class="card text-white bg-dark mb-5" style="max-width: 18rem;">
+  <div class="card-header">Album</div>
+  <div class="card-body">
+
+{%for a in person.favorite_album.all%}
+<p><a href="{%url 'music' pk=a.pk%}">{{ a.name }}</a></p>
+
+
+{% endfor %}
+
+
+  </div>
+</div>
+</div>
+{% endblock %}
+
+

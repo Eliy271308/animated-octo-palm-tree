@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+  {% block title %}
+    Movie {{ current_movie.name }}
+        {% endblock %}
+
+
+                 {% block content %}
+<p><h3>{{current_movie.name}}</h3></p>
+<p><b>Ganre: </b> <em>{{current_movie.genre}}</em></p>
+<p><b>Date release: </b> <em>{{current_movie.release_date}}</em></p>
+<p><b>Country: </b><em>{{current_movie.country}}</em></p>
+<p><b>Director: </b> <em>{{current_movie.director.name }}</em></p>
+                {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base1.html' %}
+
+{% block content %}
+<div class=" " style="width: 2000px; height: 45px; display: table-cell;  text-align: center">
+<div class="card text-white bg-dark mb-5 " style="max-width: 40rem;">
+  <div class="card-header">Tracks</div>
+  <div class="card-body">
+
+{%for track in all_track.tracks.all%}
+
+<p>
+    {{ track.name }}
+</p>
+{% endfor %}
+
+  </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+
+
+

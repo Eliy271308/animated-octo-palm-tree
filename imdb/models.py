@@ -12,10 +12,10 @@ class Director(models.Model):
 
 
 class Movie(models.Model):
-    name = models.CharField(max_length= 150,)
-    genre = models.CharField(max_length=150)
-    release_date = models.DateField(blank = True, null=True)
-    country = models.CharField(max_length=150)
+    name = models.CharField(max_length=150, verbose_name='Name')
+    genre = models.CharField(max_length=150, verbose_name='Genre')
+    release_date = models.DateField(blank = True, null=True, verbose_name='Date')
+    country = models.CharField(max_length=150, verbose_name='Country')
     director = models.ForeignKey(to=Director, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):

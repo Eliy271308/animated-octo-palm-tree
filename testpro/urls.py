@@ -40,4 +40,8 @@ urlpatterns += [
     path('', RedirectView.as_view(url='/friends/', permanent=True)),
 ]
 
+urlpatterns += [
+     path('api/v1/imdb/', include('imdb.urls')),
+]
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

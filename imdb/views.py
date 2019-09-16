@@ -23,11 +23,14 @@ class DirectorCreateView(generics.CreateAPIView):
     serializer_class = DirectorDetailSerializer
 
 
+class DirectorsListView(generics.ListAPIView):
+    serializer_class = DirectorsListSerializer
+    queryset = Director.objects.all()
+
+
 class MoviesListView(generics.ListAPIView):
     serializer_class = MoviesListSerializer
     queryset = Movie.objects.all()
-
-
 
 
 class MovieDetailView(generics.RetrieveUpdateDestroyAPIView):

@@ -30,3 +30,8 @@ urlpatterns += [
     path('detail/<int:pk>', MovieDetailView.as_view()),
 
 ]
+
+urlpatterns += [
+    path('directors/', DirectorsListView.as_view()),
+
+]

@@ -2,6 +2,14 @@ from rest_framework import serializers
 from imdb.models import *
 
 
+class DirectorField(serializers.RelatedField):
+    def to_representation(self, director):
+        return director.name
+
+    def to_internal_value(self, director):
+        return Director.objects.get(name=director)
+
+
 class DirectorDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Director
@@ -23,9 +31,16 @@ class MoviesListSerializer(serializers.ModelSerializer):
 
 
 class MovieDetailSerializer(serializers.ModelSerializer):
-    # director = serializers.StringRelatedField()
+    director = DirectorField(queryset=Director.objects.all())
 
     class Meta:
         model = Movie
         fields = "__all__"
+
+
+
+
+
+
+
 
